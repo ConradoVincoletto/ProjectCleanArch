@@ -39,7 +39,7 @@ namespace CleanArch.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrWhiteSpace(name),
                 "Invalid name. Name is requerid");
 
-            DomainExceptionValidation.When(name.Length > 3,
+            DomainExceptionValidation.When(name.Length < 3,
                 "Name invalid, Name need more 3 word");
 
             Name= name;
