@@ -11,6 +11,11 @@ namespace CleanArch.Domain.Entities
     {
         public int Id { get; private set; }
         public string Name { get; private set; }
+        public ICollection<Product> Products { get; set; }
+
+        public Category()
+        {
+        }
 
         public Category(string name)
         {
@@ -24,7 +29,10 @@ namespace CleanArch.Domain.Entities
             ValidationDomain(name);
         }
 
-        public ICollection<Product> Products { get; set; }
+        public void Update(string name)
+        {
+            ValidationDomain(name);
+        }        
 
         private void ValidationDomain(string name)
         {
