@@ -18,7 +18,10 @@ namespace CleanArch.Domain.Entities
         public int CategoryId { get; private set; }
         public Category Category { get; private set; }
 
-        public Product() { }
+        public Product(string name, string description, decimal price, int stock, string image) 
+        {
+            ValidateDomain(name, description, price, stock, image);
+        }
 
         public Product(int id, string name, string description, decimal price, int stock, string image)
         {
@@ -27,7 +30,11 @@ namespace CleanArch.Domain.Entities
             ValidateDomain(name, description, price, stock, image);           
         }
 
-
+        public void Update(string name, string description, decimal price, int stock, string image, int categoryId)
+        {
+            ValidateDomain(name, description, price, stock, image);
+            CategoryId = categoryId;
+        }
 
         public void ValidateDomain(string name, string description, decimal price, int stock, string image)
         {
