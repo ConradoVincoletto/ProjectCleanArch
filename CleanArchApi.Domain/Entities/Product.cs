@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Domain.Entities
 {
-    public sealed class Product
+    public sealed class Product : Entity
     {
-        public int Id { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; set; }
@@ -18,7 +17,7 @@ namespace CleanArch.Domain.Entities
         public int CategoryId { get; private set; }
         public Category Category { get; private set; }
 
-        public Product(string name, string description, decimal price, int stock, string image) 
+        public Product(string name, string description, decimal price, int stock, string image)
         {
             ValidateDomain(name, description, price, stock, image);
         }
@@ -27,7 +26,7 @@ namespace CleanArch.Domain.Entities
         {
             DomainExceptionValidation.When(id < 0, "Invalid Id value");
             Id = id;
-            ValidateDomain(name, description, price, stock, image);           
+            ValidateDomain(name, description, price, stock, image);
         }
 
         public void Update(string name, string description, decimal price, int stock, string image, int categoryId)
@@ -59,7 +58,7 @@ namespace CleanArch.Domain.Entities
             DomainExceptionValidation.When(image.Length > 250,
                 "Image too long. Image need be less of 250 characters");
 
-            
+
             Name = name;
             Description = description;
             Price = price;

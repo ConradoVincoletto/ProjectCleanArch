@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Domain.Entities
 {
-    public sealed class Category
+    public sealed class Category : Entity
     {
-        public int Id { get; private set; }
         public string Name { get; private set; }
         public ICollection<Product> Products { get; set; }
 
@@ -32,7 +31,7 @@ namespace CleanArch.Domain.Entities
         public void Update(string name)
         {
             ValidationDomain(name);
-        }        
+        }
 
         private void ValidationDomain(string name)
         {
@@ -42,7 +41,7 @@ namespace CleanArch.Domain.Entities
             DomainExceptionValidation.When(name.Length < 3,
                 "Name invalid, Name need more 3 word");
 
-            Name= name;
+            Name = name;
         }
     }
 }
