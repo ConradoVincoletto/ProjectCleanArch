@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanArch.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,12 @@ namespace CleanArch.Domain.Interfaces
 {
     public interface ICategoryRespository
     {
+        Task<IEnumerable<Category>> GetCategories();
+        Task<Category> GetById(int? id);
+        Task<Category> Create(Category category);
+        Task<Category> Update(Category category);
+        Task<Category> Remove(Category category);
+
+
     }
 }
