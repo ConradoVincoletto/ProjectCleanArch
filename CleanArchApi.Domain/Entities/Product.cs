@@ -9,6 +9,7 @@ namespace CleanArch.Domain.Entities
 {
     public sealed class Product : Entity
     {
+        public int Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; set; }
@@ -19,7 +20,12 @@ namespace CleanArch.Domain.Entities
 
         public Product(string name, string description, decimal price, int stock, string image)
         {
-            ValidateDomain(name, description, price, stock, image);
+            ValidateDomain(name, description, price, stock, image);            
+            Name = name;
+            Description = description;
+            Price = price;
+            Stock = stock;
+            Image = image;
         }
 
         public Product(int id, string name, string description, decimal price, int stock, string image)
@@ -27,12 +33,18 @@ namespace CleanArch.Domain.Entities
             DomainExceptionValidation.When(id < 0, "Invalid Id value");
             Id = id;
             ValidateDomain(name, description, price, stock, image);
+            Name = name;
+            Description = description;
+            Price = price;
+            Stock = stock;
+            Image = image;
         }
 
         public void Update(string name, string description, decimal price, int stock, string image, int categoryId)
         {
             ValidateDomain(name, description, price, stock, image);
             CategoryId = categoryId;
+
         }
 
         public void ValidateDomain(string name, string description, decimal price, int stock, string image)
