@@ -5,38 +5,40 @@ using Microsoft.EntityFrameworkCore;
 
 public class ProdutctRepository : IProductRepository
 {
-    ApplicationDbContext _categoryContext;
+    ApplicationDbContext _productContext;
 
-    public ProdutctRepository(ApplicationDbContext categoryContext)
+    public ProdutctRepository(ApplicationDbContext productContext)
     {
-        _categoryContext = categoryContext;
+        _productContext = productContext;
     }
 
     public async Task<Product> CreateAsync(Product product)
     {
-        _categoryContext.Add(product);
-        await _categoryContext.SaveChangesAsync();
+        _productContext.Add(product);
+        await _productContext.SaveChangesAsync();
         return product;
     }
 
     public async Task<Product> GetByIdAsync(int? id)
-        => await _categoryContext.Products.FindAsync(id);
+        => await _productContext.Products.FindAsync(id);
 
 
-    public async Task<IEnumerable<Product>> GetProductAsync() 
-        => await _categoryContext.Products.ToListAsync();
+    public async Task<Product> GetProductCategoryAsync(int? id) 
+        => await _productContext.Products.Include(x => x.Category)
+            .SingleOrDefaultAsync(p => p.Id == id);
+
 
     public async Task<Product> RemoveAsync(Product product)
     {
-        _categoryContext.Remove(product);
-        await _categoryContext.SaveChangesAsync();
+        _productContext.Remove(product);
+        await _productContext.SaveChangesAsync();
         return product;
     }
 
     public async Task<Product> UpdateAsync(Product product)
     {
-        _categoryContext.Update(product);
-        await _categoryContext.SaveChangesAsync();
+        _productContext.Update(product);
+        await _productContext.SaveChangesAsync();
         return product;
     }
 }
