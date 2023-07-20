@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApiIdentity.Models;
 
 namespace WebApiIdentity.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -16,8 +18,10 @@ namespace WebApiIdentity.Controllers
             _signInManager = signInManager;
         }
 
-
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Policy = "RequiredUserAdminGerenteRoles")]
         [HttpGet("user")]
+        
         public IActionResult GetCurrentUser()
         {
             if (User.Identity.IsAuthenticated)
@@ -28,10 +32,10 @@ namespace WebApiIdentity.Controllers
             }
 
             return BadRequest(new { Message = "Usuário não autenticado" });
-        } 
-
-        [HttpPost]
-
+        }
+        [AllowAnonymous]
+        [HttpPost("register")]
+        
         public async Task<IActionResult> Register(RegisterModel registerModel)
         {
             if(ModelState.IsValid)
@@ -47,23 +51,21 @@ namespace WebApiIdentity.Controllers
                 if(result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);                    
-                }
-
-                var errors = result.Errors.Select(error => error.Description);
-                return BadRequest(new { Errors = errors });
+                }                
             }
-            
-            return BadRequest(new { Errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)) });
+
+            return Ok("Usuario criado com sucesso");
         }
 
-        [HttpPost]
+        [Authorize]
+        [HttpPost("login")]
 
         public async Task<IActionResult> Login (LoginModel loginModel)
         {
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(loginModel.Email, 
-                    loginModel.Password, loginModel.RemeberMe, false);
+                    loginModel.Password, loginModel.RememberMe, false);
 
                 if (result.Succeeded)
                 {
@@ -86,6 +88,7 @@ namespace WebApiIdentity.Controllers
             return BadRequest(ModelState);
         }
 
+        [AllowAnonymous]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
