@@ -16,6 +16,6 @@ namespace WebApiIdentity.Models
         
         [Display(Name = "Lembrar-me")]       
 
-        public bool RemeberMe { get; set; }
+        public bool RememberMe { get; set; }
     }
 }
