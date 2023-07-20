@@ -1,13 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebApiIdentity.Entities;
 
 namespace WebApiIdentity.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
