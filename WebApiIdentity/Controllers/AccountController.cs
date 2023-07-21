@@ -33,6 +33,7 @@ namespace WebApiIdentity.Controllers
 
             return BadRequest(new { Message = "Usuário não autenticado" });
         }
+
         [AllowAnonymous]
         [HttpPost("register")]
         
