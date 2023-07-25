@@ -1,4 +1,7 @@
-﻿using CleanArch.Data.Context;
+﻿using CleanArch.Application.Interfaces;
+using CleanArch.Application.Mappings;
+using CleanArch.Application.Services;
+using CleanArch.Data.Context;
 using CleanArch.Data.Repositories;
 using CleanArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +27,11 @@ namespace CleanArch.Ioc
 
             services.AddScoped<ICategoryRespository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProdutctRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
         }
