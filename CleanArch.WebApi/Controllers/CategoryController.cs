@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.WebApi.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryRespository _categoryRespository;
@@ -14,7 +16,7 @@ namespace CleanArch.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()        
+        public async Task<IActionResult> GetAll()        
             => Ok(await _categoryRespository.GetCategories());
             
         
