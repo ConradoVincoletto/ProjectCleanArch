@@ -18,7 +18,7 @@ namespace CleanArch.WebApi.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
-            => Ok(await _productRepository.GetProduct());
+            => Ok(await _productRepository.GetProductAsync());
 
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
