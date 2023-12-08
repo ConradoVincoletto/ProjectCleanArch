@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebApiIdentity.Entities;
 
@@ -8,7 +9,7 @@ namespace WebApiIdentity.Context
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }       
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
