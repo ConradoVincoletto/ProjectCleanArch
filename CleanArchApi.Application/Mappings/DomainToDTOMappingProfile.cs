@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CleanArch.Application.DTOs;
 using CleanArch.Domain.Entities;
+using CleanArchMvc.Domain.Entities;
 
 namespace CleanArch.Application.Mappings
 {
