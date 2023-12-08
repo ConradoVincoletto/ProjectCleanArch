@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Domain", "CleanArchApi.Domain\CleanArch.Domain.csproj", "{CDF517DC-7874-409A-9D31-F773BF15357C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain", "CleanArchApi.Domain\CleanArchMvc.Domain.csproj", "{CDF517DC-7874-409A-9D31-F773BF15357C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Application", "CleanArchApi.Application\CleanArch.Application.csproj", "{79E32B91-4520-4B46-9AB5-333FDC6DEEA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Data", "CleanArchApi.Data\CleanArch.Data.csproj", "{52C21E8E-B6F1-4A54-A3EE-4C04A5228468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Data", "CleanArchApi.Data\CleanArchMvc.Data.csproj", "{52C21E8E-B6F1-4A54-A3EE-4C04A5228468}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Ioc", "CleanArchApi.Ioc\CleanArch.Ioc.csproj", "{143912F3-06D6-45E4-9868-1B178FC22D47}"
 EndProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchProject", "CleanAr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Domain.Test", "CleanArch.Domain.Test\CleanArch.Domain.Test.csproj", "{7AF116F2-2801-4A05-95DF-83B31C7CFA36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiIdentity", "WebApiIdentity\WebApiIdentity.csproj", "{132C1E2E-92C5-4901-B555-685BDE6D8253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiIdentity", "WebApiIdentity\WebApiIdentity.csproj", "{132C1E2E-92C5-4901-B555-685BDE6D8253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

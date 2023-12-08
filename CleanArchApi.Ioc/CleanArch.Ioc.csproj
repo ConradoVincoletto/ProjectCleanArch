@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchApi.Application\CleanArch.Application.csproj" />
-    <ProjectReference Include="..\CleanArchApi.Data\CleanArch.Data.csproj" />
-    <ProjectReference Include="..\CleanArchApi.Domain\CleanArch.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchApi.Data\CleanArchMvc.Data.csproj" />
+    <ProjectReference Include="..\CleanArchApi.Domain\CleanArchMvc.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-﻿using CleanArch.Data.Context;
-using CleanArch.Domain.Entities;
+﻿using CleanArch.Domain.Entities;
 using CleanArch.Domain.Interfaces;
+using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Data.Repositories

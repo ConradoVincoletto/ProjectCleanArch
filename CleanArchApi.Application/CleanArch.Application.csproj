@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchApi.Domain\CleanArch.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchApi.Domain\CleanArchMvc.Domain.csproj" />
   </ItemGroup>
 
 </Project>

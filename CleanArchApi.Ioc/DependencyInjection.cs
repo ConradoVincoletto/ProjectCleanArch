@@ -1,18 +1,13 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.Mappings;
 using CleanArch.Application.Services;
-using CleanArch.Data.Context;
 using CleanArch.Data.Repositories;
 using CleanArch.Domain.Interfaces;
+using CleanArchMvc.Infra.Data.Context;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArch.Ioc
 {
@@ -23,7 +18,7 @@ namespace CleanArch.Ioc
 
             //TODO: adicionar a sua string do sql
             services.AddDbContext<ApplicationDbContext>(opitions =>
-            opitions.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+            opitions.UseSqlServer(configuration.GetConnectionString("Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=CLEAN_ARQCH_UDEMY;Integrated Security=True;Encrypt=False;TrustServerCertificate=False"),
             b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddScoped<ICategoryRespository, CategoryRepository>();

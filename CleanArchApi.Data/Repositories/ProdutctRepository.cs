@@ -1,6 +1,6 @@
-﻿using CleanArch.Data.Context;
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
+﻿using CleanArch.Domain.Interfaces;
+using CleanArchMvc.Domain.Entities;
+using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 public class ProdutctRepository : IProductRepository
