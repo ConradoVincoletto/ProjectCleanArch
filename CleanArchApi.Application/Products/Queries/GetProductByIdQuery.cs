@@ -1,4 +1,5 @@
 ﻿using CleanArch.Domain.Entities;
+using CleanArchMvc.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;

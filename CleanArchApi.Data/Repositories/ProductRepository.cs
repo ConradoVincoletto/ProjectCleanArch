@@ -3,11 +3,11 @@ using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-public class ProdutctRepository : IProductRepository
+public class ProductRepository : IProductRepository
 {
     ApplicationDbContext _productContext;
 
-    public ProdutctRepository(ApplicationDbContext productContext)
+    public ProductRepository(ApplicationDbContext productContext)
     {
         _productContext = productContext;
     }

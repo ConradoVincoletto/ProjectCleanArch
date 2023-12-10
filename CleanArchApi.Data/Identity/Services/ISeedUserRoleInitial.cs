@@ -1,6 +1,6 @@
 ﻿namespace WebApiIdentity.Services
 {
-    public interface ISeedUserRolesInitial
+    public interface ISeedUserRoleInitial
     {
         Task SeedRolesAsync();
         Task SeedUserAsync();

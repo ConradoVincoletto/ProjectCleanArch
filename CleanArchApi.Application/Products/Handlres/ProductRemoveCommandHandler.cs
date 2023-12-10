@@ -1,6 +1,6 @@
 ﻿using CleanArch.Application.Products.Commands;
-using CleanArch.Domain.Entities;
 using CleanArch.Domain.Interfaces;
+using CleanArchMvc.Domain.Entities;
 using MediatR;
 
 namespace CleanArch.Application.Products.Handlres

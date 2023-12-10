@@ -1,5 +1,6 @@
 ﻿using CleanArch.Domain.Entities;
 using CleanArch.Domain.Validation;
+using CleanArchMvc.Domain.Entities;
 using FluentAssertions;
 
 namespace CleanArch.Domain.Test

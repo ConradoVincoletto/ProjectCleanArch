@@ -2,12 +2,12 @@
 
 namespace WebApiIdentity.Services
 {
-    public class SeedUserRolesInitial : ISeedUserRolesInitial
+    public class SeedUserRoleInitial : ISeedUserRoleInitial
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public SeedUserRolesInitial(UserManager<IdentityUser> userManager,
+        public SeedUserRoleInitial(UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;

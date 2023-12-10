@@ -1,6 +1,7 @@
 ﻿using CleanArch.Application.Products.Commands;
 using CleanArch.Domain.Entities;
 using CleanArch.Domain.Interfaces;
+using CleanArchMvc.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
