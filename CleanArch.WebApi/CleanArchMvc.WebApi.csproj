@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchApi.Ioc\CleanArch.Ioc.csproj" />
-    <ProjectReference Include="..\WebApiIdentity\WebApiIdentity.csproj" />
   </ItemGroup>
 
 </Project>

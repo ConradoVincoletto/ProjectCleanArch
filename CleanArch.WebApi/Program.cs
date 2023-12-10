@@ -1,10 +1,9 @@
+using CleanArch.Ioc;
+using CleanArchMvc.Infra.Data.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
-using System;
-using WebApiIdentity.Context;
 using WebApiIdentity.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,13 +21,19 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
+void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+{
+    services.AddInfrastructure(configuration);
+}
+
+
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
                   options.UseSqlServer(connection));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -45,7 +50,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         optionts.SlidingExpiration = true;
     });
 
-builder.Services.AddScoped<ISeedUserRolesInitial, SeedUserRolesInitial>();
+builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -79,7 +84,7 @@ async Task CriarPerfisUsuariosAsync(WebApplication app)
 
     using (var scope = scopedFactory.CreateScope())
     {
-        var service = scope.ServiceProvider.GetService<ISeedUserRolesInitial>();
+        var service = scope.ServiceProvider.GetService<ISeedUserRoleInitial>();
         await service.SeedRolesAsync();
         await service.SeedUserAsync();
     }
