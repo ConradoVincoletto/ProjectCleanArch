@@ -24,6 +24,7 @@ builder.Services.AddControllers();
 void ConfigureServices(IServiceCollection services, IConfiguration configuration)
 {
     services.AddInfrastructure(configuration);
+    services.AddInfrastructureJwt(configuration);
 }
 
 
