@@ -41,7 +41,7 @@ namespace CleanArch.Ioc
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             var myHandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
-            services.AddMediatR(myHandlers);
+            services.AddMediatR(cfc => cfc.RegisterServicesFromAssemblies(myHandlers));
 
             return services;
         }
