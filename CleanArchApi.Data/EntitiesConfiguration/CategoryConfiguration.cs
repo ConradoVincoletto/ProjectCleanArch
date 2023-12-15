@@ -8,20 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArch.Data.EntitiesConfiguration
+namespace CleanArch.Data.EntitiesConfiguration;
+
+public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {
-    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public void Configure(EntityTypeBuilder<Category> builder)
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
-        {
-            builder.HasKey(c => c.Id);
-            builder.Property(c => c.Name).HasMaxLength(100).IsRequired();
+        builder.HasKey(c => c.Id);
+        builder.Property(c => c.Name).HasMaxLength(100).IsRequired();
 
-            builder.HasData(
-                new Category(1, "Material escolar"),
-                new Category(2, "Móveis"),
-                new Category(3, "Eletrônicos"));
+        builder.HasData(
+            new Category(1, "Material escolar"),
+            new Category(2, "Móveis"),
+            new Category(3, "Eletrônicos"));
 
-        }
     }
 }
