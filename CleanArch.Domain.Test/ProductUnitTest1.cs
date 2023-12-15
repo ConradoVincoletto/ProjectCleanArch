@@ -20,7 +20,7 @@ namespace CleanArch.Domain.Test
         public void CreatCategory_NegativeIdValue_ResultObejctNegativeId()
         {
             Action action = () => new Product(-1, "Conrado", "Mouse", 9.99m, 99, "Image");
-            action.Should().Throw<DomainExceptionValidation>().WithMessage("Invalid Id value");
+            action.Should().Throw<DomainExceptionValidation>().WithMessage("Invalid Id value.");
         }
         
         [Fact]
@@ -28,7 +28,7 @@ namespace CleanArch.Domain.Test
         public void CreatCategory_TooShortNameValue_ResultObejctTooShortName()
         {
             Action action = () => new Product(1, "C", "Mouse", 9.99m, 99, "Image");
-            action.Should().Throw<DomainExceptionValidation>().WithMessage("Name invalid, Name need more 3 word");
+            action.Should().Throw<DomainExceptionValidation>().WithMessage("Invalid name, too short, minimum 3 characters");
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace CleanArch.Domain.Test
                 "Conrado Vincoletto Conrado Vincoletto Conrado Vincoletto Conrado Vincoletto Conrado Vincoletto";
 
             Action action = () => new Product(1, "Conrado", "Mouse", 9.99m, 99, fictinalName);
-            action.Should().Throw<DomainExceptionValidation>().WithMessage("Image too long. Image need be less of 250 characters");
+            action.Should().Throw<DomainExceptionValidation>().WithMessage("Invalid image name, too long, maximum 250 characters");
         }
 
         [Theory]
