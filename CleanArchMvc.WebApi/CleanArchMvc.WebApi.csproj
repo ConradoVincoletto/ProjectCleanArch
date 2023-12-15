@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchApi.Ioc\CleanArchMvc.Ioc.csproj" />
+    <ProjectReference Include="..\CleanArchMvc.Ioc\CleanArchMvc.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

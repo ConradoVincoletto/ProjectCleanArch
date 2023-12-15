@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchApi.Application\CleanArchMvc.Application.csproj" />
-    <ProjectReference Include="..\CleanArchApi.Data\CleanArchMvc.Data.csproj" />
-    <ProjectReference Include="..\CleanArchApi.Domain\CleanArchMvc.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchMvc.Application\CleanArchMvc.Application.csproj" />
+    <ProjectReference Include="..\CleanArchMvc.Data\CleanArchMvc.Data.csproj" />
+    <ProjectReference Include="..\CleanArchMvc.Domain\CleanArchMvc.Domain.csproj" />
   </ItemGroup>
 
 </Project>
