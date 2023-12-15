@@ -18,7 +18,8 @@ namespace CleanArchMvc.WebApi.Controllers
 
         public TokenController(IAuthenticate authenticate, IConfiguration configuration)
         {
-            _authenticate = authenticate;
+            _authenticate = authenticate ??
+            throw new ArgumentNullException(nameof(authenticate)); 
             _configuration = configuration;
         }
 

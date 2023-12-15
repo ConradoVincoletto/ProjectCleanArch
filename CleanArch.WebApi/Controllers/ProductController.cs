@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CleanArch.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Authorize]
     public class ProductController : ControllerBase
     {
