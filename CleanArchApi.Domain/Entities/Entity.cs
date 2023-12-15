@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArch.Domain.Entities
+namespace CleanArch.Domain.Entities;
+
+public abstract class Entity
 {
-    public abstract class Entity
-    {
-        public int Id { get; protected set; }
-    }
+    public int Id { get; protected set; }
 }
