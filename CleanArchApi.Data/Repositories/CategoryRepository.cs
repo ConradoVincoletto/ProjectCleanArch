@@ -1,9 +1,9 @@
-﻿using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
+﻿using CleanArchMcv.Domain.Entities;
+using CleanArchMcv.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArch.Data.Repositories
+namespace CleanArchMcv.Data.Repositories
 {
     public class CategoryRepository : ICategoryRespository
     {

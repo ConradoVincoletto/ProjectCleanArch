@@ -1,4 +1,4 @@
-using CleanArch.Ioc;
+using CleanArchMcv.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 

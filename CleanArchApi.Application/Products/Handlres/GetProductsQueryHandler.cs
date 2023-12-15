@@ -1,9 +1,9 @@
-﻿using CleanArch.Application.Products.Queries;
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
+﻿using CleanArchMcv.Application.Products.Queries;
+using CleanArchMcv.Domain.Entities;
+using CleanArchMcv.Domain.Interfaces;
 using CleanArchMvc.Domain.Entities;
 using MediatR;
-namespace CleanArch.Application.Products.Handlres;
+namespace CleanArchMcv.Application.Products.Handlres;
 
 public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, IEnumerable<Product>>
 {

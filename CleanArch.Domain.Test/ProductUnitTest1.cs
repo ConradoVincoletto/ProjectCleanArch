@@ -1,9 +1,9 @@
-﻿using CleanArch.Domain.Entities;
-using CleanArch.Domain.Validation;
+﻿using CleanArchMcv.Domain.Entities;
+using CleanArchMcv.Domain.Validation;
 using CleanArchMvc.Domain.Entities;
 using FluentAssertions;
 
-namespace CleanArch.Domain.Test
+namespace CleanArchMcv.Domain.Test
 {
     public class ProductUnitTest1
     {

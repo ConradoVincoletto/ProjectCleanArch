@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace CleanArch.Application.DTOs
+namespace CleanArchMcv.Application.DTOs
 {
     public record CategoryDTO
     {

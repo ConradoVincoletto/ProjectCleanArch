@@ -1,4 +1,4 @@
-﻿using CleanArch.Domain.Entities;
+﻿using CleanArchMcv.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArch.Data.EntitiesConfiguration;
+namespace CleanArchMcv.Data.EntitiesConfiguration;
 
 public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {

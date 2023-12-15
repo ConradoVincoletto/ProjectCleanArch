@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using CleanArch.Application.DTOs;
-using CleanArch.Application.Interfaces;
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
+using CleanArchMcv.Application.DTOs;
+using CleanArchMcv.Application.Interfaces;
+using CleanArchMcv.Domain.Entities;
+using CleanArchMcv.Domain.Interfaces;
 
-namespace CleanArch.Application.Services
+namespace CleanArchMcv.Application.Services
 {
     public class CategoryService : ICategoryService
     {

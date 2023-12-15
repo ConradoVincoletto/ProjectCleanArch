@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace CleanArch.Ioc;
+namespace CleanArchMcv.Ioc;
 
 public static class DependencyInjectionJwt
 {

@@ -1,8 +1,8 @@
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Validation;
+using CleanArchMcv.Domain.Entities;
+using CleanArchMcv.Domain.Validation;
 using FluentAssertions;
 
-namespace CleanArch.Domain.Test
+namespace CleanArchMcv.Domain.Test
 {
     public class CategoryUnitTest1
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace CleanArch.Ioc;
+namespace CleanArchMcv.Ioc;
 
 public static class DependencyinjectionSwagger
 {

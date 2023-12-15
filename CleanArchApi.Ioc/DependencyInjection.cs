@@ -1,8 +1,8 @@
-﻿using CleanArch.Application.Interfaces;
-using CleanArch.Application.Mappings;
-using CleanArch.Application.Services;
-using CleanArch.Data.Repositories;
-using CleanArch.Domain.Interfaces;
+﻿using CleanArchMcv.Application.Interfaces;
+using CleanArchMcv.Application.Mappings;
+using CleanArchMcv.Application.Services;
+using CleanArchMcv.Data.Repositories;
+using CleanArchMcv.Domain.Interfaces;
 using CleanArchMvc.Data.Identity.Services;
 using CleanArchMvc.Domain.Account;
 using CleanArchMvc.Infra.Data.Context;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiIdentity.Services;
 
-namespace CleanArch.Ioc;
+namespace CleanArchMcv.Ioc;
 
 public static class DependencyInjection
 {
@@ -22,7 +22,7 @@ public static class DependencyInjection
 
         //TODO: adicionar a sua string do sql
         services.AddDbContext<ApplicationDbContext>(opitions =>
-        opitions.UseSqlServer(configuration.GetConnectionString("Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=CLEAN_ARQCH_UDEMY;Integrated Security=True;Encrypt=False;TrustServerCertificate=False"),
+        opitions.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
         services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -52,7 +52,7 @@ public static class DependencyInjection
 
         services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
-        var myHandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
+        var myHandlers = AppDomain.CurrentDomain.Load("CleanArchMcv.Application");
         services.AddMediatR(cfc => cfc.RegisterServicesFromAssemblies(myHandlers));
 
         return services;

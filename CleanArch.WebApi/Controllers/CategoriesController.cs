@@ -1,9 +1,9 @@
-﻿using CleanArch.Application.DTOs;
-using CleanArch.Application.Interfaces;
+﻿using CleanArchMcv.Application.DTOs;
+using CleanArchMcv.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArch.WebApi.Controllers
+namespace CleanArchMcv.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

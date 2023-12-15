@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CleanArch.Application.DTOs;
-using CleanArch.Application.Interfaces;
-using CleanArch.Application.Products.Commands;
-using CleanArch.Application.Products.Queries;
+using CleanArchMcv.Application.DTOs;
+using CleanArchMcv.Application.Interfaces;
+using CleanArchMcv.Application.Products.Commands;
+using CleanArchMcv.Application.Products.Queries;
 using MediatR;
 
 public class ProductService : IProductService

@@ -1,7 +1,7 @@
-﻿using CleanArch.Domain.Validation;
+﻿using CleanArchMcv.Domain.Validation;
 using CleanArchMvc.Domain.Entities;
 
-namespace CleanArch.Domain.Entities
+namespace CleanArchMcv.Domain.Entities
 {
     public sealed class Category : Entity
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArch.Domain.Entities;
+namespace CleanArchMcv.Domain.Entities;
 
 public abstract class Entity
 {

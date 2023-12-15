@@ -1,4 +1,4 @@
-﻿namespace CleanArch.Domain.Validation;
+﻿namespace CleanArchMcv.Domain.Validation;
 
 public class DomainExceptionValidation : Exception
 {

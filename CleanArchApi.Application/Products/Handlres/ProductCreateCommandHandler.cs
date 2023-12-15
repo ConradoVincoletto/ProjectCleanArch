@@ -1,15 +1,9 @@
-﻿using CleanArch.Application.Products.Commands;
-using CleanArch.Domain.Entities;
-using CleanArch.Domain.Interfaces;
+﻿using CleanArchMcv.Application.Products.Commands;
+using CleanArchMcv.Domain.Interfaces;
 using CleanArchMvc.Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CleanArch.Application.Products.Handlres;
+namespace CleanArchMcv.Application.Products.Handlres;
 
 public class ProductCreateCommandHandler : IRequestHandler<ProductCreateCommand, Product>
 {

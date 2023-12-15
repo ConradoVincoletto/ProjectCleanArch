@@ -1,7 +1,7 @@
 ﻿using CleanArchMvc.Domain.Entities;
 using MediatR;
 
-namespace CleanArch.Application.Products.Commands;
+namespace CleanArchMcv.Application.Products.Commands;
 
 public class ProductRemoveCommand : IRequest<Product>
 {
