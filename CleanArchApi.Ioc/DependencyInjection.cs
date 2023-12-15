@@ -18,7 +18,7 @@ namespace CleanArch.Ioc
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) 
+        public static IServiceCollection AddInfrastructureAPI(this IServiceCollection services, IConfiguration configuration)
         {
 
             //TODO: adicionar a sua string do sql
@@ -29,6 +29,19 @@ namespace CleanArch.Ioc
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 7;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredUniqueChars = 1;
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequiredUserAdminGerenteRoles",
+                    policy => policy.RequireRole("User", "Admin", "Gerente"));
+            });
 
             services.AddScoped<ICategoryRespository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
