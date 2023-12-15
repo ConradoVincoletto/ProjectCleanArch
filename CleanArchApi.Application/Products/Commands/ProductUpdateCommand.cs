@@ -1,7 +1,6 @@
-﻿namespace CleanArch.Application.Products.Commands
+﻿namespace CleanArch.Application.Products.Commands;
+
+public class ProductUpdateCommand : ProductCommands
 {
-    public class ProductUpdateCommand : ProductCommands
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }
