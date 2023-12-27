@@ -1,6 +1,5 @@
-﻿namespace CleanArchMcv.Application.Products.Commands
+﻿namespace CleanArchMcv.Application.Products.Commands;
+
+public class ProductCreateCommand : ProductCommands
 {
-    public class ProductCreateCommand : ProductCommands
-    {
-    }
 }

@@ -3,6 +3,7 @@ using CleanArchMcv.Domain.Entities;
 using CleanArchMcv.Domain.Interfaces;
 using CleanArchMvc.Domain.Entities;
 using MediatR;
+
 namespace CleanArchMcv.Application.Products.Handlres;
 
 public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, IEnumerable<Product>>

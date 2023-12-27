@@ -5,6 +5,7 @@ using CleanArchMcv.Application.Products.Commands;
 using CleanArchMcv.Application.Products.Queries;
 using MediatR;
 
+namespace CleanArchMcv.Application.Services;
 public class ProductService : IProductService
 {
 

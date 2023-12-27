@@ -3,14 +3,13 @@ using CleanArchMcv.Application.DTOs;
 using CleanArchMcv.Domain.Entities;
 using CleanArchMvc.Domain.Entities;
 
-namespace CleanArchMcv.Application.Mappings
+namespace CleanArchMcv.Application.Mappings;
+
+public class DomainToDTOMappingProfile : Profile
 {
-    public class DomainToDTOMappingProfile : Profile
+    public  DomainToDTOMappingProfile()
     {
-        public  DomainToDTOMappingProfile()
-        {
-            CreateMap<Product, ProductDTO>().ReverseMap();
-            CreateMap<Category, CategoryDTO>().ReverseMap();
-        }
+        CreateMap<Product, ProductDTO>().ReverseMap();
+        CreateMap<Category, CategoryDTO>().ReverseMap();
     }
 }

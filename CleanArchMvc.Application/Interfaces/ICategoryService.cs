@@ -1,13 +1,12 @@
 ﻿using CleanArchMcv.Application.DTOs;
 
-namespace CleanArchMcv.Application.Interfaces
+namespace CleanArchMcv.Application.Interfaces;
+
+public interface ICategoryService
 {
-    public interface ICategoryService
-    {
-        Task<IEnumerable<CategoryDTO>> GetCategories();
-        Task<CategoryDTO> GetById(int? id);
-        Task Add(CategoryDTO categoryDTO);
-        Task Update(CategoryDTO categoryDTO);
-        Task Remove(int? id);
-    }
+    Task<IEnumerable<CategoryDTO>> GetCategories();
+    Task<CategoryDTO> GetById(int? id);
+    Task Add(CategoryDTO categoryDTO);
+    Task Update(CategoryDTO categoryDTO);
+    Task Remove(int? id);
 }
