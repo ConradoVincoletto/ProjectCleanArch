@@ -1,7 +1,7 @@
 ﻿using CleanArchMvc.Domain.Account;
 using Microsoft.AspNetCore.Identity;
 
-namespace WebApiIdentity.Services;
+namespace CleanArchMvc.Data.Identity.Services;
 
 public class SeedUserRoleInitial : ISeedUserRoleInitial
 {

@@ -1,8 +1,9 @@
 ﻿using CleanArchMcv.Domain.Interfaces;
+using CleanArchMvc.Data.Context;
 using CleanArchMvc.Domain.Entities;
-using CleanArchMvc.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
+namespace CleanArchMcv.Data.Repositories;
 public class ProductRepository : IProductRepository
 {
     ApplicationDbContext _productContext;
