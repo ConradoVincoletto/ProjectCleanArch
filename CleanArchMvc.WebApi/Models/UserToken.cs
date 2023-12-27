@@ -1,8 +1,7 @@
-﻿namespace CleanArchMvc.WebApi.Models
+﻿namespace CleanArchMvc.WebApi.Models;
+
+public class UserToken
 {
-    public class UserToken
-    {
-        public string Token { get; set; } = string.Empty;
-        public DateTime Expiration { get; set; }
-    }
+    public string Token { get; set; } = string.Empty;
+    public DateTime Expiration { get; set; }
 }

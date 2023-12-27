@@ -3,15 +3,13 @@ using CleanArchMcv.Application.Mappings;
 using CleanArchMcv.Application.Services;
 using CleanArchMcv.Data.Repositories;
 using CleanArchMcv.Domain.Interfaces;
+using CleanArchMvc.Data.Context;
 using CleanArchMvc.Data.Identity.Services;
 using CleanArchMvc.Domain.Account;
-using CleanArchMvc.Infra.Data.Context;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebApiIdentity.Services;
 
 namespace CleanArchMcv.Ioc;
 
