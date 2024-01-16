@@ -4,21 +4,21 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace CleanArchMcv.Ioc;
+namespace CleanArchMvc.IoC;
 
-public static class DependencyInjectionJwt
+public static class DependencyInjectionJWT
 {
-    public static IServiceCollection AddInfrastructureJwt(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfrastructureJWT(this IServiceCollection services,
+        IConfiguration configuration)
     {
-        //tipo de autenticação Jwt-Bearer
-        //definir o modelo de desafio de antenticação
+        //informar o tipo de autenticacao JWT-Bearer
+        //definir o modelo de desafio de autenticacao
         services.AddAuthentication(opt =>
         {
             opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
         })
-        //habilita a autenticação JWT usando o esquema e desafio definidos
+        //habilita a autenticacao JWT usando o esquema e desafio definidos
         //validar o token
         .AddJwtBearer(options =>
         {
@@ -32,9 +32,8 @@ public static class DependencyInjectionJwt
                 ValidIssuer = configuration["Jwt:Issuer"],
                 ValidAudience = configuration["Jwt:Audience"],
                 IssuerSigningKey = new SymmetricSecurityKey(
-                         Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])),
+                     Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])),
                 ClockSkew = TimeSpan.Zero
-
             };
         });
         return services;

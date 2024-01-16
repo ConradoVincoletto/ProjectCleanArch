@@ -9,6 +9,7 @@ using System.Text;
 
 namespace CleanArchMvc.WebApi.Controllers;
 
+[ApiController]
 [Route("api/[controller]")]
 [ApiController]
 public class TokenController : ControllerBase

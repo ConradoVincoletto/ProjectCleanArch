@@ -8,10 +8,10 @@ namespace CleanArchMcv.Application.Services;
 
 public class CategoryService : ICategoryService
 {
-    private readonly ICategoryRespository _categoryRespository;
+    private readonly ICategoryRepository _categoryRespository;
     private readonly IMapper _mapper;
 
-    public CategoryService(ICategoryRespository categoryRespository, IMapper mapper)
+    public CategoryService(ICategoryRepository categoryRespository, IMapper mapper)
     {
         _categoryRespository = categoryRespository;
         _mapper = mapper;
@@ -21,6 +21,7 @@ public class CategoryService : ICategoryService
     {
         var categoryEntity = _mapper.Map<Category>(categoryDTO);
         await _categoryRespository.Create(categoryEntity);
+        categoryDTO.Id = categoryEntity.Id;
     }
 
     public async Task<CategoryDTO> GetById(int? id)

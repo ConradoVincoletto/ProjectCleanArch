@@ -13,9 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchMvc.IoC;
 
-public static class DependencyInjection
+public static class DependencyInjectionAPI
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services,
+    public static IServiceCollection AddInfrastructureAPI(this IServiceCollection services,
         IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
@@ -26,16 +26,12 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        services.ConfigureApplicationCookie(options =>
-                 options.AccessDeniedPath = "/Account/Login");
-
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ICategoryService, CategoryService>();
 
         services.AddScoped<IAuthenticate, AuthenticateService>();
-        services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
         services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
